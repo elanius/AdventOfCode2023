@@ -1,4 +1,4 @@
-FILENAME = "input2.txt"
+import sys
 
 digits = {
     "one": 1,
@@ -24,11 +24,10 @@ def find_digit(line, index):
     return None, index + 1
 
 
-def main():
+def trebuchet(filename):
     sum = 0
-
     # Read the input file
-    with open(FILENAME) as f:
+    with open(filename) as f:
         lines = f.readlines()
 
     first_digit = None
@@ -53,7 +52,15 @@ def main():
         first_digit = None
         last_digit = None
 
-    print(f"Final sum from file: {FILENAME} is {sum}")
+    print(f"Final sum from file: {filename} is {sum}")
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python gear_ratios.py <filename>")
+        sys.exit(1)
+
+    trebuchet(sys.argv[1])
 
 
 if __name__ == "__main__":

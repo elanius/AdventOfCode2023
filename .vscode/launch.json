@@ -11,6 +11,23 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${fileDirname}",
+            "justMyCode": true,
+            "args": ["example.txt"]
+        },
+        {
+            "name": "Python: Debug Pytest",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "-v",
+                "advent_of_code/day_05/test_seeds.py::test_complex_merge"
+            ],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "console": "integratedTerminal",
             "justMyCode": true
         }
     ]
